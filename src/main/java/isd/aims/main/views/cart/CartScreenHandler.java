@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-import isd.aims.main.common.exception.MediaNotAvailableException;
-import isd.aims.main.common.exception.PlaceOrderException;
+import isd.aims.main.exception.MediaNotAvailableException;
+import isd.aims.main.exception.PlaceOrderException;
 import isd.aims.main.controller.PlaceOrderController;
 import isd.aims.main.controller.ViewCartController;
 import isd.aims.main.entity.cart.CartMedia;
@@ -17,7 +17,7 @@ import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.BaseScreenHandler;
 import isd.aims.main.views.popup.PopupScreen;
-import isd.aims.main.views.shipping.ShippingScreenHandler;
+import isd.aims.main.views.shipping.DeliveryFormHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -119,12 +119,12 @@ public class CartScreenHandler extends BaseScreenHandler {
 			Order order = placeOrderController.createOrder();
 
 			// display shipping form
-			ShippingScreenHandler ShippingScreenHandler = new ShippingScreenHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
-			ShippingScreenHandler.setPreviousScreen(this);
-			ShippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
-			ShippingScreenHandler.setScreenTitle("Shipping Screen");
-			ShippingScreenHandler.setBController(placeOrderController);
-			ShippingScreenHandler.show();
+			DeliveryFormHandler DeliveryFormHandler = new DeliveryFormHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
+			DeliveryFormHandler.setPreviousScreen(this);
+			DeliveryFormHandler.setHomeScreenHandler(homeScreenHandler);
+			DeliveryFormHandler.setScreenTitle("Shipping Screen");
+			DeliveryFormHandler.setBController(placeOrderController);
+			DeliveryFormHandler.show();
 
 		} catch (MediaNotAvailableException e) {
 			// if some media are not available then display cart and break usecase Place Order

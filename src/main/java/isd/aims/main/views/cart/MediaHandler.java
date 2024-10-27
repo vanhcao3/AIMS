@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.logging.Logger;
 
-import isd.aims.main.common.exception.MediaUpdateException;
-import isd.aims.main.common.exception.ViewCartException;
+import isd.aims.main.exception.MediaUpdateException;
+import isd.aims.main.exception.ViewCartException;
 import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.utils.Configs;

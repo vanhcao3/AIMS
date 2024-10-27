@@ -1,11 +1,11 @@
 package isd.aims.main.controller;
 
-import isd.aims.main.common.exception.PaymentException;
-import isd.aims.main.common.exception.UnrecognizedException;
+import isd.aims.main.exception.PaymentException;
+import isd.aims.main.exception.UnrecognizedException;
 import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.response.Response;
-import isd.aims.main.subsystem.VnPayInterface;
-import isd.aims.main.subsystem.VnPaySubsystem;
+import isd.aims.main.InterbankSubsystem.InterbankInterface;
+import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -21,18 +21,18 @@ import java.util.Map;
  */
 public class PaymentController extends BaseController {
 
-	private VnPayInterface vnPayService;
+	private InterbankInterface vnPayService;
 
 	public PaymentController() {
 		vnPayService = new VnPaySubsystem();
 	}
 
-	public Map<String, String> makePayment(Response response, int orderId) {
+	public Map<String, String> payOrder(Response response, int orderId) {
 		Map<String, String> result = new Hashtable<String, String>();
 
 		try {
 			// this.vnPayService = new VnPaySubsystem();
-			var trans = vnPayService.makePaymentTransaction(response);
+			var trans = vnPayService.payOrder(response);
 			trans.save(orderId);
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
 			result.put("MESSAGE", "You have succesffully paid the order!");
@@ -52,7 +52,7 @@ public class PaymentController extends BaseController {
 	 * Generate VNPay payment URL
 	 */
 	public String getUrlPay(int amount, String content) {
-		var url = vnPayService.generatePayUrl(amount, content);
+		var url = vnPayService.generatePaymentURL(amount, content);
 		return url;
 	}
 

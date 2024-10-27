@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import isd.aims.main.common.exception.MediaNotAvailableException;
+import isd.aims.main.exception.MediaNotAvailableException;
 import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.entity.media.Media;

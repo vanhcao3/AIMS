@@ -1,6 +1,6 @@
 package isd.aims.main.entity.cart;
 
-import isd.aims.main.common.exception.MediaNotAvailableException;
+import isd.aims.main.exception.MediaNotAvailableException;
 import isd.aims.main.entity.media.Media;
 
 import java.sql.SQLException;
