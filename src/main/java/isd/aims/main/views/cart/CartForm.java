@@ -15,9 +15,9 @@ import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.entity.order.Order;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
-import isd.aims.main.views.BaseScreenHandler;
-import isd.aims.main.views.popup.PopupScreen;
-import isd.aims.main.views.shipping.DeliveryFormHandler;
+import isd.aims.main.views.BaseForm;
+import isd.aims.main.views.popup.PopupForm;
+import isd.aims.main.views.shipping.DeliveryForm;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,9 +26,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class CartScreenHandler extends BaseScreenHandler {
+public class CartForm extends BaseForm {
 
-	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
+	private static Logger LOGGER = Utils.getLogger(CartForm.class.getName());
 
 	@FXML
 	private ImageView aimsImage;
@@ -54,7 +54,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	@FXML
 	private Button btnPlaceOrder;
 
-	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
+	public CartForm(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
 
 		// fix relative image path caused by fxml
@@ -93,7 +93,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		return (ViewCartController) super.getBController();
 	}
 
-	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
+	public void requestToViewCart(BaseForm prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
 		getBController().checkAvailabilityOfProduct();
@@ -106,7 +106,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			// create placeOrderController and process the order
 			PlaceOrderController placeOrderController = new PlaceOrderController();
 			if (placeOrderController.getListCartMedia().isEmpty()){
-				PopupScreen.error("You don't have anything to place");
+				PopupForm.error("You don't have anything to place");
 				return;
 			}
 
@@ -119,7 +119,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			Order order = placeOrderController.createOrder();
 
 			// display shipping form
-			DeliveryFormHandler DeliveryFormHandler = new DeliveryFormHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
+			DeliveryForm DeliveryFormHandler = new DeliveryForm(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
 			DeliveryFormHandler.setPreviousScreen(this);
 			DeliveryFormHandler.setHomeScreenHandler(homeScreenHandler);
 			DeliveryFormHandler.setScreenTitle("Shipping Screen");
@@ -162,7 +162,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 				// display the attribute of vboxCart media
 				CartMedia cartMedia = (CartMedia) cm;
-				MediaHandler mediaCartScreen = new MediaHandler(Configs.CART_MEDIA_PATH, this);
+				MediaForm mediaCartScreen = new MediaForm(Configs.CART_MEDIA_PATH, this);
 				mediaCartScreen.setCartMedia(cartMedia);
 
 				// add spinner

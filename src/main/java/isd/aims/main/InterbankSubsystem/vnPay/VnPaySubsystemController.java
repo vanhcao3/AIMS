@@ -4,7 +4,7 @@ import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.request.Request;
 import isd.aims.main.entity.response.Response;
 import isd.aims.main.utils.Configs;
-import isd.aims.main.views.payment.VNPayScreen;
+import isd.aims.main.views.payment.VNPay;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -100,7 +100,7 @@ public class VnPaySubsystemController {
         var req = new Request(amount, orderInfo);
         String paymentURL = req.buildQueryURL();
         Stage stage = new Stage();
-        var vnPayScreen = new VNPayScreen(stage, Configs.PAYMENT_SCREEN_PATH, paymentURL);
+        var vnPayScreen = new VNPay(stage, Configs.PAYMENT_SCREEN_PATH, paymentURL);
         vnPayScreen.show();
     }
 

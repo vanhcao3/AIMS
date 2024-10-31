@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import isd.aims.main.entity.order.OrderMedia;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
-import isd.aims.main.views.FXMLScreenHandler;
+import isd.aims.main.views.FXMLForm;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class MediaInvoiceScreenHandler extends FXMLScreenHandler {
+public class MediaInvoiceForm extends FXMLForm {
 
     @FXML
     private HBox hboxMedia;
@@ -43,7 +43,7 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler {
 
     private OrderMedia orderMedia;
 
-    public MediaInvoiceScreenHandler(String screenPath) throws IOException{
+    public MediaInvoiceForm(String screenPath) throws IOException{
         super(screenPath);
     }
 

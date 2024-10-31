@@ -3,7 +3,7 @@ package isd.aims.main;
 import java.io.IOException;
 
 import isd.aims.main.utils.Configs;
-import isd.aims.main.views.home.HomeScreenHandler;
+import isd.aims.main.views.home.HomeForm;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -51,7 +51,7 @@ public class App extends Application {
             // After fade out, load actual content
             fadeOut.setOnFinished((e) -> {
                 try {
-                    HomeScreenHandler homeHandler = new HomeScreenHandler(primaryStage, Configs.HOME_PATH);
+                    HomeForm homeHandler = new HomeForm(primaryStage, Configs.HOME_PATH);
                     homeHandler.setScreenTitle("Home Screen");
                     homeHandler.setImage();
                     homeHandler.show();

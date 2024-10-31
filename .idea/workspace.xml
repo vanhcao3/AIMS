@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/InterbankInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/PaymentFormHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPayScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/result.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/BaseScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/BaseForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/FXMLScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/FXMLForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/SplashScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/SplashForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/MediaInvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/MediaInvoiceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPayScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/popup/PopupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/popup/PopupForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryFormHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/splash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/splash.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +74,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

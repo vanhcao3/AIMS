@@ -3,7 +3,7 @@ package isd.aims.main.views.popup;
 import java.io.IOException;
 
 import isd.aims.main.utils.Configs;
-import isd.aims.main.views.BaseScreenHandler;
+import isd.aims.main.views.BaseForm;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,7 +13,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 
-public class PopupScreen extends BaseScreenHandler {
+public class PopupForm extends BaseForm {
 
 
     @FXML
@@ -23,12 +23,12 @@ public class PopupScreen extends BaseScreenHandler {
     Label message;
 
 
-    public PopupScreen(Stage stage) throws IOException{
+    public PopupForm(Stage stage) throws IOException{
         super(stage, Configs.POPUP_PATH);
     }
 
-    private static PopupScreen popup(String message, String imagePath, Boolean undecorated) throws IOException{
-        PopupScreen popup = new PopupScreen(new Stage());
+    private static PopupForm popup(String message, String imagePath, Boolean undecorated) throws IOException{
+        PopupForm popup = new PopupForm(new Stage());
         if (undecorated) popup.stage.initStyle(StageStyle.UNDECORATED);
         popup.message.setText(message);
         popup.setImage(imagePath);
@@ -43,7 +43,7 @@ public class PopupScreen extends BaseScreenHandler {
         popup(message, Configs.IMAGE_PATH_ICON + "/" + "tickerror.png", false).show(false);
     }
 
-    public static PopupScreen loading(String message) throws IOException{
+    public static PopupForm loading(String message) throws IOException{
         return popup(message, Configs.IMAGE_PATH_ICON + "/" + "loading.gif", true);
     }
 

@@ -11,8 +11,8 @@ import isd.aims.main.controller.PlaceOrderController;
 import isd.aims.main.entity.invoice.Invoice;
 import isd.aims.main.entity.order.Order;
 import isd.aims.main.utils.Configs;
-import isd.aims.main.views.BaseScreenHandler;
-import isd.aims.main.views.invoice.InvoiceHandler;
+import isd.aims.main.views.BaseForm;
+import isd.aims.main.views.invoice.InvoiceForm;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
@@ -23,7 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class DeliveryFormHandler extends BaseScreenHandler implements Initializable {
+public class DeliveryForm extends BaseForm implements Initializable {
 
 	@FXML
 	private Label screenTitle;
@@ -45,7 +45,7 @@ public class DeliveryFormHandler extends BaseScreenHandler implements Initializa
 
 	private Order order;
 
-	public DeliveryFormHandler(Stage stage, String screenPath, Order order) throws IOException {
+	public DeliveryForm(Stage stage, String screenPath, Order order) throws IOException {
 		super(stage, screenPath);
 		this.order = order;
 	}
@@ -86,7 +86,7 @@ public class DeliveryFormHandler extends BaseScreenHandler implements Initializa
 
 		// create invoice screen
 		Invoice invoice = getBController().createInvoice(order);
-		BaseScreenHandler InvoiceScreenHandler = new InvoiceHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
+		BaseForm InvoiceScreenHandler = new InvoiceForm(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
 		InvoiceScreenHandler.setPreviousScreen(this);
 		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
 		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
