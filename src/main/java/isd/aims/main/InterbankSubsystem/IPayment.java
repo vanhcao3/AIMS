@@ -8,12 +8,12 @@ import isd.aims.main.entity.response.Response;
 import java.text.ParseException;
 
 /**
- * The {@code InterbankInterface} class is used to communicate with the
+ * The {@code IPayment} class is used to communicate with the
  * {@link VnPaySubsystem InterbankSubsystem} to make transaction.
  *
  * @author hieud
  */
-public interface InterbankInterface {
+public interface IPayment {
 
     /**
      * Pay order, and then return the payment transaction.
@@ -21,6 +21,4 @@ public interface InterbankInterface {
     public abstract String generatePaymentURL(int amount, String contents)
             throws PaymentException, UnrecognizedException;
 
-
-    public PaymentTransaction payOrder(Response response) throws ParseException;
 }

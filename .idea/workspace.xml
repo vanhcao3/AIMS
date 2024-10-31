@@ -6,49 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/AimsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/AimsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/AnonymousTransactionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/AnonymousTransactionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/FailLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/FailLoginException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/InternalServerErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/InternalServerErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/InvalidCardException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/InvalidCardException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/InvalidDeliveryInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/InvalidDeliveryInfoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/InvalidTransactionAmountException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/InvalidTransactionAmountException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/InvalidVersionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/InvalidVersionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/MediaNotAvailableException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/MediaNotAvailableException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/MediaUpdateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/MediaUpdateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/NotEnoughBalanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/NotEnoughBalanceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/NotEnoughTransactionInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/NotEnoughTransactionInfoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/PaymentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/PaymentException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/PlaceOrderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/PlaceOrderException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/ProcessInvoiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/ProcessInvoiceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/ProcessingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/ProcessingException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/RejectedTransactionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/RejectedTransactionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/SendToBankException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/SendToBankException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/SuspiciousTransactionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/SuspiciousTransactionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/TransactionFailedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/TransactionFailedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/TransactionNotDoneException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/TransactionNotDoneException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/TransactionReverseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/TransactionReverseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/UnrecognizedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/UnrecognizedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception/ViewCartException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/exception/ViewCartException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/InterbankInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/db/AIMSDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/db/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/response/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem/VnPayInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/InterbankInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem/vnPay/VnPayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeScreenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/PaymentFormHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/ShippingScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryFormHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/PaymentFormHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPayScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/ResultScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/result.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +46,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -93,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/2024_1/TA/ISD.ICT.20232.07-master",
+    "last_opened_file_path": "D:/2024_1/TA/ISD.ICT.20232.12-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -122,7 +96,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="isd.aims.main.App" />
       <module name="main" />
@@ -187,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DBConnection" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.DBConnection" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="JUnit.JUnit5ExampleTest.justAnExample" />
       </list>

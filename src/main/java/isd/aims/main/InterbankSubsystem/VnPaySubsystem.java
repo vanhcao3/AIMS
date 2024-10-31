@@ -13,7 +13,7 @@ import java.text.ParseException;
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
  */
-public class VnPaySubsystem implements InterbankInterface {
+public class VnPaySubsystem implements IPayment {
 
     /**
      * Represent the controller of the subsystem.
@@ -35,9 +35,5 @@ public class VnPaySubsystem implements InterbankInterface {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public PaymentTransaction payOrder(Response response) throws ParseException {
-            return ctrl.payOrder(response);
     }
 }

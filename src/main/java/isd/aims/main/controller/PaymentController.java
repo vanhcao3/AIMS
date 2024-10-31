@@ -1,12 +1,15 @@
 package isd.aims.main.controller;
 
+import isd.aims.main.InterbankSubsystem.IPayment;
+import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
+import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
+import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.exception.PaymentException;
 import isd.aims.main.exception.UnrecognizedException;
 import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.response.Response;
-import isd.aims.main.InterbankSubsystem.InterbankInterface;
-import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Hashtable;
@@ -21,39 +24,33 @@ import java.util.Map;
  */
 public class PaymentController extends BaseController {
 
-	private InterbankInterface vnPayService;
+	private IPayment paymentService;
+	private int amount;
+	private String orderInfo;
 
-	public PaymentController() {
-		vnPayService = new VnPaySubsystem();
+	public PaymentController(IPayment vnPayService) {
+		this.paymentService = vnPayService;
 	}
 
-	public Map<String, String> payOrder(Response response, int orderId) {
-		Map<String, String> result = new Hashtable<String, String>();
-
-		try {
-			// this.vnPayService = new VnPaySubsystem();
-			var trans = vnPayService.payOrder(response);
-			trans.save(orderId);
-			result.put("RESULT", "PAYMENT SUCCESSFUL!");
-			result.put("MESSAGE", "You have succesffully paid the order!");
-		} catch (PaymentException | UnrecognizedException | SQLException ex) {
-			result.put("MESSAGE", ex.getMessage());
-			result.put("RESULT", "PAYMENT FAILED!");
-
-		} catch (ParseException ex) {
-			result.put("MESSAGE", ex.getMessage());
-			result.put("RESULT", "PAYMENT FAILED!");
-		}
-
-		return result;
+	public void payOrder(int amount, String orderInfo) throws IOException, SQLException {
+		// Bắt đầu quy trình thanh toán
+		new VnPaySubsystemController().payOrder(amount, orderInfo);
+		emptyCart();
 	}
 
 	/**
 	 * Generate VNPay payment URL
 	 */
 	public String getUrlPay(int amount, String content) {
-		var url = vnPayService.generatePaymentURL(amount, content);
+		var url = paymentService.generatePaymentURL(amount, content);
 		return url;
+	}
+
+	public void processTransaction(PaymentTransaction transactionResult, int orderId) throws SQLException {
+		if (transactionResult != null) {
+			transactionResult.save(orderId);  // Lưu đơn hàng
+			emptyCart();  // Làm rỗng giỏ hàng
+		}
 	}
 
 	public void emptyCart(){

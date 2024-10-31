@@ -28,7 +28,7 @@ public class PaymentTransaction {
 	public void save(int orderId) throws SQLException {
 		this.orderID = orderId;
 		Statement stm = DBConnection.getConnection().createStatement();
-		String query = "INSERT INTO Transaction ( orderID, createAt, content) " +
+		String query = "INSERT INTO \"Transaction\" ( orderID, createAt, content) " +
 				"VALUES ( ?, ?, ?)";
 		try (PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query)) {
 			preparedStatement.setInt(1, 1);
@@ -57,6 +57,20 @@ public class PaymentTransaction {
 		}
 
 		return count;
+	}
+
+	public boolean isSuccess() {
+		// Assuming a null errorCode or an errorCode "00" means success
+		return errorCode == null || "00".equals(errorCode);
+	}
+
+	// Get a message based on the success or failure of the transaction
+	public String getMessage() {
+		if (isSuccess()) {
+			return "Payment was successful.";
+		} else {
+			return "Payment failed with error code: " + errorCode;
+		}
 	}
 
 }
