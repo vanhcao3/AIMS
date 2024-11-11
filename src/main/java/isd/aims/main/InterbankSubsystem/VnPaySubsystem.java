@@ -2,6 +2,7 @@ package isd.aims.main.InterbankSubsystem;
 
 //import entity.payment.CreditCard;
 
+import isd.aims.main.controller.TransactionResultListener;
 import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.response.Response;
 import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
@@ -19,6 +20,7 @@ public class VnPaySubsystem implements IPayment {
      * Represent the controller of the subsystem.
      */
     private VnPaySubsystemController ctrl;
+    private TransactionResultListener listener;
 
     /**
      * Initializes a newly created {@code InterbankSubsystem} object so that it

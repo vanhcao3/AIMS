@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
+import isd.aims.main.controller.TransactionResultListener;
 import isd.aims.main.entity.invoice.Invoice;
 import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.InterbankSubsystem.vnPay.VnPayConfig;
@@ -31,13 +32,15 @@ public class VNPay extends BaseForm {
     @FXML
     private VBox vBox;
     private PaymentTransaction transactionResult;
+    private TransactionResultListener listener;
     public PaymentTransaction getTransactionResult() {
         return transactionResult;
     }
 
-    public VNPay(Stage stage, String screenPath, String paymentURL) throws IOException {
+    public VNPay(Stage stage, String screenPath, String paymentURL, TransactionResultListener listener) throws IOException {
         super(stage, screenPath);
         this.paymentURL = paymentURL;
+        this.listener = listener;
         WebView paymentView = new WebView();
         WebEngine webEngine = paymentView.getEngine();
         webEngine.load(paymentURL);
@@ -61,15 +64,17 @@ public class VNPay extends BaseForm {
                 // Xử lý giao dịch và lưu kết quả
                 transactionResult = VnPaySubsystemController.processResponse(newValue);
 
+                if (listener != null) {
+                    listener.onTransactionCompleted(transactionResult);
+                } else System.out.println("NULL");
+
                 if (transactionResult != null) {
                     homeScreenHandler = new HomeForm(stage, Configs.HOME_PATH);
                     showResultScreen(transactionResult);
-                    transactionResult.save(1);
                 }
+
             } catch (URISyntaxException | ParseException | IOException e) {
                 e.printStackTrace();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
             }
         }
     }

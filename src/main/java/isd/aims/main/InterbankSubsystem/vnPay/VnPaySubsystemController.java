@@ -1,5 +1,6 @@
 package isd.aims.main.InterbankSubsystem.vnPay;
 
+import isd.aims.main.controller.TransactionResultListener;
 import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.request.Request;
 import isd.aims.main.entity.response.Response;
@@ -20,7 +21,14 @@ public class VnPaySubsystemController {
 
     private static final String PAY_COMMAND = "pay";
     private static final String VERSION = "2.1.0";
+    private TransactionResultListener listener;
 
+    public VnPaySubsystemController() {
+    }
+
+    public VnPaySubsystemController(TransactionResultListener listener) {
+        this.listener = listener;
+    }
 
     public PaymentTransaction refund(int amount, String contents) {
         return null;
@@ -100,7 +108,7 @@ public class VnPaySubsystemController {
         var req = new Request(amount, orderInfo);
         String paymentURL = req.buildQueryURL();
         Stage stage = new Stage();
-        var vnPayScreen = new VNPay(stage, Configs.PAYMENT_SCREEN_PATH, paymentURL);
+        var vnPayScreen = new VNPay(stage, Configs.PAYMENT_SCREEN_PATH, paymentURL, this.listener);
         vnPayScreen.show();
     }
 
