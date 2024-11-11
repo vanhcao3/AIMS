@@ -2,11 +2,10 @@ package isd.aims.main.views.payment;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.sql.SQLException;
 import java.text.ParseException;
 
 import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
-import isd.aims.main.controller.TransactionResultListener;
+import isd.aims.main.listener.TransactionResultListener;
 import isd.aims.main.entity.invoice.Invoice;
 import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.InterbankSubsystem.vnPay.VnPayConfig;
@@ -33,9 +32,6 @@ public class VNPay extends BaseForm {
     private VBox vBox;
     private PaymentTransaction transactionResult;
     private TransactionResultListener listener;
-    public PaymentTransaction getTransactionResult() {
-        return transactionResult;
-    }
 
     public VNPay(Stage stage, String screenPath, String paymentURL, TransactionResultListener listener) throws IOException {
         super(stage, screenPath);
@@ -54,9 +50,6 @@ public class VNPay extends BaseForm {
         vBox.getChildren().clear();
         vBox.getChildren().add(paymentView);
     }
-
-
-
 
     private void handleUrlChanged(String newValue) {
         if (newValue.contains(VnPayConfig.vnp_ReturnUrl)) {

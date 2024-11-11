@@ -1,6 +1,6 @@
 package isd.aims.main.InterbankSubsystem.vnPay;
 
-import isd.aims.main.controller.TransactionResultListener;
+import isd.aims.main.listener.TransactionResultListener;
 import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.request.Request;
 import isd.aims.main.entity.response.Response;

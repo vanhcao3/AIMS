@@ -2,13 +2,10 @@ package isd.aims.main.InterbankSubsystem;
 
 //import entity.payment.CreditCard;
 
-import isd.aims.main.controller.TransactionResultListener;
-import isd.aims.main.entity.payment.PaymentTransaction;
-import isd.aims.main.entity.response.Response;
+import isd.aims.main.listener.TransactionResultListener;
 import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
 
 import java.io.IOException;
-import java.text.ParseException;
 
 /***
  * The {@code InterbankSubsystem} class is used to communicate with the

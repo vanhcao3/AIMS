@@ -1,20 +1,13 @@
 package isd.aims.main.controller;
 
 import isd.aims.main.InterbankSubsystem.IPayment;
-import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
 import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
 import isd.aims.main.entity.payment.PaymentTransaction;
-import isd.aims.main.exception.PaymentException;
-import isd.aims.main.exception.UnrecognizedException;
 import isd.aims.main.entity.cart.Cart;
-import isd.aims.main.entity.response.Response;
+import isd.aims.main.listener.TransactionResultListener;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.Hashtable;
-import java.util.Map;
-
 
 
 /**
@@ -31,6 +24,10 @@ public class PaymentController extends BaseController implements TransactionResu
 	public PaymentController(IPayment vnPayService) {
 		this.paymentService = vnPayService;
 	}
+
+	/**
+	 * Generate VNPay payment URL
+	 */
 
 	public void payOrder(int amount, String orderInfo) throws IOException, SQLException {
 		// Bắt đầu quy trình thanh toán
@@ -49,21 +46,6 @@ public class PaymentController extends BaseController implements TransactionResu
 			}
 		} else {
 			System.out.println("Giao dịch thất bại: " + (transactionResult != null ? transactionResult.getMessage() : "Lỗi không xác định"));
-		}
-	}
-
-	/**
-	 * Generate VNPay payment URL
-	 */
-	public String getUrlPay(int amount, String content) {
-		var url = paymentService.generatePaymentURL(amount, content);
-		return url;
-	}
-
-	public void processTransaction(PaymentTransaction transactionResult, int orderId) throws SQLException {
-		if (transactionResult != null) {
-			transactionResult.save(orderId);  // Lưu đơn hàng
-			emptyCart();  // Làm rỗng giỏ hàng
 		}
 	}
 
