@@ -1,6 +1,6 @@
 package isd.aims.main.entity.media;
 
-import isd.aims.main.entity.db.AIMSDB;
+import isd.aims.main.entity.db.DBConnection;
 import isd.aims.main.utils.Utils;
 
 import java.sql.ResultSet;
@@ -29,7 +29,7 @@ public class Media {
     protected String imageURL;
 
     public Media() throws SQLException{
-        stm = AIMSDB.getConnection().createStatement();
+        stm = DBConnection.getConnection().createStatement();
     }
 
     public Media (int id, String title, String category, int price, int quantity, String type) throws SQLException{
@@ -40,7 +40,7 @@ public class Media {
         this.quantity = quantity;
         this.type = type;
 
-        //stm = AIMSDB.getConnection().createStatement();
+        //stm = DBConnection.getConnection().createStatement();
     }
 
     public int getQuantity() throws SQLException{
@@ -51,7 +51,7 @@ public class Media {
 
     public Media getMediaById(int id) throws SQLException{
         String sql = "SELECT * FROM Media ;";
-        Statement stm = AIMSDB.getConnection().createStatement();
+        Statement stm = DBConnection.getConnection().createStatement();
         ResultSet res = stm.executeQuery(sql);
 		if(res.next()) {
 
@@ -68,7 +68,7 @@ public class Media {
     }
 
     public List getAllMedia() throws SQLException{
-        Statement stm = AIMSDB.getConnection().createStatement();
+        Statement stm = DBConnection.getConnection().createStatement();
         ResultSet res = stm.executeQuery("select * from Media");
         ArrayList medium = new ArrayList<>();
         while (res.next()) {
@@ -86,7 +86,7 @@ public class Media {
     }
 
     public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {
-        Statement stm = AIMSDB.getConnection().createStatement();
+        Statement stm = DBConnection.getConnection().createStatement();
         if (value instanceof String){
             value = "\"" + value + "\"";
         }

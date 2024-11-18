@@ -1,17 +1,13 @@
 package isd.aims.main.controller;
 
-import isd.aims.main.common.exception.PaymentException;
-import isd.aims.main.common.exception.UnrecognizedException;
+import isd.aims.main.InterbankSubsystem.IPayment;
+import isd.aims.main.InterbankSubsystem.vnPay.VnPaySubsystemController;
+import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.cart.Cart;
-import isd.aims.main.entity.response.Response;
-import isd.aims.main.subsystem.VnPayInterface;
-import isd.aims.main.subsystem.VnPaySubsystem;
+import isd.aims.main.listener.TransactionResultListener;
 
+import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.Hashtable;
-import java.util.Map;
-
 
 
 /**
@@ -19,41 +15,38 @@ import java.util.Map;
  * in our AIMS Software.
  *
  */
-public class PaymentController extends BaseController {
+public class PaymentController extends BaseController implements TransactionResultListener {
 
-	private VnPayInterface vnPayService;
+	private IPayment paymentService;
+	private int amount;
+	private String orderInfo;
 
-	public PaymentController() {
-		vnPayService = new VnPaySubsystem();
-	}
-
-	public Map<String, String> makePayment(Response response, int orderId) {
-		Map<String, String> result = new Hashtable<String, String>();
-
-		try {
-			// this.vnPayService = new VnPaySubsystem();
-			var trans = vnPayService.makePaymentTransaction(response);
-			trans.save(orderId);
-			result.put("RESULT", "PAYMENT SUCCESSFUL!");
-			result.put("MESSAGE", "You have succesffully paid the order!");
-		} catch (PaymentException | UnrecognizedException | SQLException ex) {
-			result.put("MESSAGE", ex.getMessage());
-			result.put("RESULT", "PAYMENT FAILED!");
-
-		} catch (ParseException ex) {
-			result.put("MESSAGE", ex.getMessage());
-			result.put("RESULT", "PAYMENT FAILED!");
-		}
-
-		return result;
+	public PaymentController(IPayment vnPayService) {
+		this.paymentService = vnPayService;
 	}
 
 	/**
 	 * Generate VNPay payment URL
 	 */
-	public String getUrlPay(int amount, String content) {
-		var url = vnPayService.generatePayUrl(amount, content);
-		return url;
+
+	public void payOrder(int amount, String orderInfo) throws IOException, SQLException {
+		// Bắt đầu quy trình thanh toán
+		new VnPaySubsystemController(this).payOrder(amount, orderInfo);
+	}
+
+	@Override
+	public void onTransactionCompleted(PaymentTransaction transactionResult) {
+		if (transactionResult != null && transactionResult.isSuccess()) {
+			try {
+				transactionResult.save(1); // Lưu giao dịch vào cơ sở dữ liệu nếu thành công
+				emptyCart(); // Làm trống giỏ hàng
+				System.out.println("Lưu thành công");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("Giao dịch thất bại: " + (transactionResult != null ? transactionResult.getMessage() : "Lỗi không xác định"));
+		}
 	}
 
 	public void emptyCart(){

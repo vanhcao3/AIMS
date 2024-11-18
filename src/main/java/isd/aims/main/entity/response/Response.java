@@ -1,8 +1,7 @@
 package isd.aims.main.entity.response;
 
-import isd.aims.main.common.exception.*;
+import isd.aims.main.exception.*;
 
-import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
