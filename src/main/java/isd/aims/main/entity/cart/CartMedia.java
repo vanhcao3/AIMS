@@ -1,15 +1,15 @@
 package isd.aims.main.entity.cart;
 
-
 import isd.aims.main.entity.media.Media;
 
 public class CartMedia {
-    
+
     private Media media;
     private int quantity;
     private int price;
+    private double weight;
 
-    public CartMedia(){
+    public CartMedia() {
 
     }
 
@@ -18,13 +18,21 @@ public class CartMedia {
         this.quantity = quantity;
         this.price = price;
     }
-    
+
     public Media getMedia() {
         return this.media;
     }
 
     public void setMedia(Media media) {
         this.media = media;
+    }
+
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     public int getQuantity() {
@@ -45,12 +53,10 @@ public class CartMedia {
 
     @Override
     public String toString() {
-        return "{" 
-            + " media='" + media + "'" 
-            + ", quantity='" + quantity + "'" 
-            + "}";
+        return "{"
+                + " media='" + media + "'"
+                + ", quantity='" + quantity + "'"
+                + "}";
     }
 
 }
-
-    
